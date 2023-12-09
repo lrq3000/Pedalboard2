@@ -1,5 +1,4 @@
-Pedalboard2
------------
+# Pedalboard2
 
 Description
 -----------
@@ -43,9 +42,9 @@ Files
 -----
 Settings files are stored:
 
-Documents and Settings/<user name>/Application Data/Pedalboard2 (Windows XP)
-Users/<user name>/AppData/Roaming/Pedalboard2 (Windows Vista/7)
-/Users/<user name>/Library/Application Support/Pedalboard2 (OSX)
+* Windows XP: `Documents and Settings/<user name>/Application Data/Pedalboard2`
+* Windows Vista/7/8/10/11: `Users/<user name>/AppData/Roaming/Pedalboard2`
+* Mac OSX: `/Users/<user name>/Library/Application Support/Pedalboard2`
 
 
 License Details
