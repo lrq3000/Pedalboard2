@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Open Sound Control Primer</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Open Sound Control Primer</h2>
+
+	<p>
+		This page is intended as a quick explanation of the Open Sound Control
+		protocol from a user's perspective. If you'd like more detail, see the
+		official specification
+		<a href="http://opensoundcontrol.org/spec-1_0">here</a>.
+	</p>
+
+	<ul>
+		<li>
+			<a href="osc-primer.html#WhatIsOSC">What is Open Sound Control?</a>
+		</li>
+		<li>
+			<a href="osc-primer.html#WhyUseOSC">Why use Open Sound Control?</a>
+		</li>
+		<li>
+			<a href="osc-primer.html#WhatDoINeedToKnow">What do I Need to Know?</a>
+		</li>
+	</ul>
+
+	<h2><a name="WhatIsOSC"></a>What is Open Sound Control?</h2>
+
+	<p>
+		Open Sound Control (hereafter abbreviated OSC) is a protocol designed
+		for the transmission of musical control data. It is designed to serve a
+		similar purpose to MIDI, albeit with a far less rigid definition of what
+		constitutes musical control data. It is also a network protocol, meaning
+		that it can be used to send data between computers, tablets, smartphones
+		etc. Essentially, any device connected to your network can send and
+		receive OSC data.
+	</p>
+
+	<h2><a name="WhatIsOSC"></a>Why use Open Sound Control?</h2>
+
+	<p>
+		OSC was designed to overcome the significant obstacles imposed by the
+		continued use of the decades-old MIDI standard. Obstacles such as:
+	</p>
+
+	<ul>
+		<li>
+			MIDI data is limited to 7-bit words. This means that, for example,
+			MIDI Control Change messages can only ever represent 128 discrete
+			values. This can be particularly problematic when a MIDI controller
+			is mapped to a filter cutoff, for example, where you will hear
+			audible 'stepping' if the filter programmer did not add in some kind
+			of interpolation. <em>(to be fair, the MIDI spec does allow for
+			special 14-bit CC messages, but these are rarely implemented)</em>
+		</li>
+		<li>
+			MIDI was designed with the Western musical scale in mind, and
+			particularly, focused on keyboard instruments. It specifies 128
+			discrete note values, and does not handle issues such as glissandi
+			or alternate scales without complicated workarounds.
+		</li>
+		<li>
+			MIDI uses a fixed 31.5kBaud transmission rate. This is painfully
+			slow compared to today's hardware, and can lead to congestion when
+			multiple MIDI devices are all transmitting/receiving data
+			simultaneously.
+		</li>
+		<li>
+			MIDI does not handle multiple input devices particularly well. In
+			order for, e.g. multiple input devices to be connected to a single
+			MIDI synthesizer, each input must be set to a unique channel, of
+			which there may only be a maximum of 16. If more inputs are
+			required, additional MIDI interfaces are required. 
+		</li>
+	</ul>
+
+	<p>
+		OSC has none of these limitations.
+	</p>
+
+	<h2><a name="WhatDoINeedToKnow"></a>What do I Need to Know?</h2>
+
+	<h3>IP Addresses and Ports</h3>
+
+	<p>
+		As a network protocol, OSC relies on IP addresses to identify where OSC
+		messages should be sent. Basically, any device connected to your network
+		has a unique IP address assigned to it. For an OSC client (the
+		device/software which is transmitting OSC data) to send messages to an
+		OSC server (the device/software which is receiving OSC data), it simply
+		needs to know the IP address and port of the OSC server.
+	</p>
+
+	<p>
+		Ports are a way of ensuring specific network data gets routed to the
+		correct application for that data (e.g. webpage data is received on
+		port 80). A port is just a 16-bit number. When sending/receiving OSC
+		data, you can essentially pick an arbitrary port number, as long as it
+		is greater than 1023 (numbers 0->1023 are reserved for various
+		system uses).
+	</p>
+
+	<p>
+		To summarise; an OSC server needs to be told to listen on a specific
+		port; any OSC client that wants to communicate with that server will
+		need to know the port the server is listening on, and the IP address
+		of the device the server is running on.
+	</p>
+
+	<h3>OSC Addresses</h3>
+
+	<p>
+		Any data sent via OSC is sent alongside an OSC address. This is simply
+		a piece of text that specifies what that data refers to. Essentially,
+		a single OSC message looks something like this:
+	</p>
+
+	<pre>
+/1/slider1 0.5
+	</pre>
+
+	<p>
+		<em>/1/slider1</em> is the OSC address of the message, and <em>0.5</em>
+		is the data of that message. For an application like the Pedalboard to
+		then make use of this message, it needs to be told that any messages
+		with the OSC address <em>/1/slider1</em> should be mapped to a
+		particular plugin parameter or application function.
+	</p>
+
+	<p>
+		All OSC devices and software transmit OSC messages like the above. One
+		thing to note is that (to date) there is no agreed-upon standard
+		regarding the naming of OSC addresses; an OSC address can be anything,
+		as long as it starts with a forward-slash. Fortunately, the Pedalboard
+		has a basic <a href="osc-mappings.html#OSCLearn">OSC learn</a> function
+		which can be used to determine the OSC addresses used by any particular
+		OSC client device. 
+	</p>
+</div>
+
+</div>
+
+</body>

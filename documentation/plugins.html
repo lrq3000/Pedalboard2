@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Plugins</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Plugins</h2>
+
+	<p>
+		The Pedalboard supports two audio plugin formats: VST 2.x (Windows and
+		OSX), and AudioUnits (OSX-only), both of which are treated identically
+		from the user's perspective. This page covers the details of how
+		plugins are handled.
+	</p>
+
+	<ul>
+		<li>
+			<a href="plugins.html#PluginScanning">Plugin Scanning</a>
+		</li>
+		<li>
+			<a href="plugins.html#AddingPluginsToYourPatch">Adding Plugins to Your Patch</a>
+		</li>
+		<li>
+			<a href="plugins.html#PluginButtons">Plugin Buttons</a>
+		</li>
+		<li>
+			<a href="plugins.html#RenamingPlugins">Renaming Plugins</a>
+		</li>
+	</ul>
+
+	<h2><a name="PluginScanning"></a>Plugin Scanning</h2>
+
+	<p>
+		To make the Pedalboard aware of the plugins on your system, you need to
+		scan the directories where you keep your plugins. This is done via the
+		<em>Plugin List</em> entry in the <em>Options</em> menu.
+	</p>
+	
+	<p>
+		<img src="images/Options-PluginList.png" alt="Plugin List entry in the Options menu"/>
+	</p>
+
+	<p>
+		This will bring up the following window, from which you can choose to
+		scan or remove plugins from the list via the <em>Options...</em> button.
+	</p>
+	
+	<p>
+		<img src="images/PluginList.png" alt="Plugin List dialog"/>
+	</p>
+
+	<p>
+		One thing to note is that if, during the scan, the app encounters a
+		misbehaving plugin which causes it to crash, the app will keep a note
+		of it and ignore it the next time the scan is run. The list of
+		misbehaving plugins is stored in the <em>Pedalboard2</em> user
+		directory, in the <em>RecentlyCrashedPluginsList</em> file. See the
+		<a href="pedalboard-files.html">Pedalboard Files</a> page for the
+		location of the <em>Pedalboard2</em> user directory on your system.
+	</p>
+
+	<h2><a name="AddingPluginsToYourPatch"></a>Adding Plugins to Your Patch</h2>
+
+	<p>
+		To add a plugin to your patch, you simply double-click somewhere in the
+		main plugin field.
+	</p>
+	
+	<p>
+		<img src="images/PluginSelection.png" alt="Plugin menu selection"/>
+	</p>
+
+	<p>
+		This will display a pop-up menu as above, from which you can select
+		the plugin you're interested in by clicking on it.
+	</p>
+
+	<h2><a name="PluginButtons"></a>Plugin Buttons</h2>
+
+	<p>
+		In the Pedalboard, plugins are represented by the following widget:
+	</p>
+	
+	<p>
+		<img src="images/DecimateProcessor.png" alt="+decimate plugin processor"/>
+	</p>
+
+	<p>
+		Input connections are on the left of the widget, output connections
+		on the right. The buttons along the bottom of the widget are as
+		follows:
+	</p>
+
+	<h3><b>e:</b> Open the plugin's editor</h3>
+	
+	<p>
+		<img src="images/DecimateEditor.png" alt="+decimate plugin editor"/>
+	</p>
+
+	<p>
+		This opens the plugin's editor in a separate window, as above. If a
+		plugin does not implement its own custom editor, the Pedalboard will
+		display a generic editor, with a slider for each of the plugin's
+		parameters. The toolbar along the top of the window lets you switch
+		between plugin preset settings. For more information on how the app
+		handles plugin presets, see the <a href="plugin-presets.html">Plugin
+		Presets</a> page.
+	</p>
+
+	<h3><b>m:</b> Open the plugin's mappings window</h3>
+	
+	<p>
+		<a href="images/DecimateMappings1.png"><img src="images/DecimateMappings1-sm.png" alt="+decimate plugin mappings window (empty)"/></a>
+	</p>
+
+	<p>
+		This opens the plugin's mappings window, as above. In addition to the
+		parameter mapping options here, the MIDI channel control can be used to
+		ensure the plugin will only respond to MIDI messages on a specific MIDI
+		channel. For more information on mappings, see the
+		<a href="midi-mappings.html">MIDI Mappings</a> and
+		<a href="osc-mappings.html">OSC Mappings</a> pages.
+	</p>
+
+	<h3><b>b:</b> Bypass the plugin</h3>
+
+	<p>
+		This is a toggle button which can be used to bypass the plugin (pass
+		the plugin's input audio directly to its output uneffected). When
+		bypassed, the plugin's <em>'b'</em> is displayed in bold. Note that
+		a plugin's bypass state can be mapped to MIDI or OSC parameters the
+		same as any of its internal parameters.
+	</p>
+
+	<h3><b>x:</b> Delete the plugin</h3>
+
+	<p>
+		Clicking this button will delete the plugin, as well as any connections
+		or mappings associated with it.
+	</p>
+
+	<h2><a name="RenamingPlugins"></a>Renaming Plugins</h2>
+
+	<p>
+		A feature which may come in useful with large patches, or patches which
+		feature a number of otherwise identical plugins, is the ability to
+		rename those plugins on the plugin field.
+	</p>
+	
+	<p>
+		<img src="images/DecimateNameEdit.png" alt="Editing a +decimate plugin's name"/>
+	</p>
+
+	<p>
+		To rename a plugin, simply double-click its name, as seen above. Note
+		that renaming a plugin will also resize its widget to fit the new name.
+		A related feature which may be useful is the option to ignore a plugin's
+		published port names. This is most useful for those plugins which
+		have lengthy names for their inputs and outputs, as this can lead to
+		extremely wide plugin widgets in the Pedalboard's plugin field. To
+		toggle this option, select the <em>Ignore plugin pin names</em> option
+		in <em>Options-&gt;Misc Settings</em>:
+	</p>
+	
+	<p>
+		<img src="images/IgnorePluginPinNames.png" alt="Ignore plugin pin names option"/>
+	</p>
+</div>
+
+</div>
+
+</body>

@@ -1,0 +1,60 @@
+Pedalboard2 ToDo
+----------------
+- Update to latest version of JUCE.
+- Midi Output.
+- OSC timeline of some kind.
+	- Maybe generalisable, so it can do MIDI too?
+- Visual output of some kind.
+- Serial port input.
+- Make sure the home key can be used by Application Mappings.
+	- Viewport is currently grabbing it.
+- Include the name of the current pdl file in the titlebar?
+- Fix connection drawing so it doesn't mess up when drawing backwards.
+- Plugin preset management:
+	- Plugin preset next/prev commands which can be mapped to MIDI CCs and OSC
+	  messages.
+- Renaming the selected patch in Patch Organiser doesn't update the Patch:
+  combobox's text.
+- Hotkey to auto bypass all filters.
+- Altering stuff via the Patch Organiser seems to screw things up sometimes.
+- Fix AudioRecorder not always starting when triggered via MIDI->Main Transport.
+- Snap to grid.
+- Make sure Pedalboard starts minimized if it's been told to.
+- Try a Linux version again.
+- Check whether changing patches fast crashes on OSX.
+- Make loadSVGFromMemory() a global helper function, not copy and pasted into
+  every class that uses it.
+
+
+- Improve plugin pins (temporarily enlarge them when the mouse is over them
+  maybe).
+- Make sure Audio Output is always at the right of the screen.
+- No-setup record button.
+- Router processor to replace Output Toggle.
+	- 4 inputs, 4 outputs.
+	- Lets the user toggle between two routing states (user-defined).
+- MIDI/OSC messages sometimes ignored? There's some oddness happening, but it
+  may be outside the app's control? Hard to debug :(
+- 64-bit version for Windows.
+- Update documentation.
+
+
+- Make BypassableInstance a ChangeBroadcaster; switch PluginComponent over to
+  being a ChangeListener instead of the timerUpdate() method.
+- Replace Event Log TextEditor with ListBox.
+- Make sure any cross-thread variables are Atomic.
+- System Tray Component: Double-click should hide/show *all* windows.
+- Make sure Metronome editors can't accept anything other than numbers
+  (possible?).
+- Zoom out mode/some way of reducing screen space taken up by plugin components
+  & connections?
+- 'Global' plugin field; doesn't change when you switch patches?
+- Split PedalboardProcessors files into separate files for each processor.
+- Current tempo display/editor is ugly - make it hidable?
+- Move Misc Settings over to a PropertyPanel?
+- Better add plugin method?
+- Threading issues when deleting mappings?
+- Switch over to a single Timer for all Internal processor Controls?
+- Update BranchesLAF with custom sliders and toggle buttons?
+- Zeroconf/bonjour support?
+- Joystick/pad input?

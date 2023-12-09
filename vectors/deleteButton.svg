@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="24"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="deleteButton.svg"
+   inkscape:export-filename="C:\Users\Niall\Programming\Applications\Pedalboard2\vectors\playButton.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="0.34169603"
+     inkscape:cy="-1.7905371"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1028.3622)">
+    <path
+       style="fill:#000000;fill-opacity:0.50196078;stroke:none"
+       d="m 6.228864,1032.1668 c -0.6650948,0.011 -1.2609708,0.2311 -1.7333239,0.7034 -1.2596075,1.2597 -0.6921263,3.4221 0.7536191,5.2754 0.5960994,0.7641 1.2142327,1.5087 1.8589271,2.2357 -0.6317297,0.7149 -1.2504562,1.4402 -1.8589271,2.1855 -1.4892326,1.8241 -1.9881059,4.0157 -0.7284985,5.2753 1.2596082,1.2596 3.4511608,0.7608 5.2753339,-0.7284 0.7545194,-0.616 1.4872544,-1.2442 2.2106164,-1.8841 0.718826,0.6354 1.435934,1.2721 2.185495,1.8841 1.824174,1.4892 4.040847,1.988 5.300455,0.7284 1.259607,-1.2596 0.735613,-3.4512 -0.753619,-5.2753 -0.608471,-0.7453 -1.227198,-1.4706 -1.858927,-2.1855 0.644694,-0.727 1.287948,-1.4716 1.884047,-2.2357 1.445746,-1.8533 1.988106,-4.0157 0.728499,-5.2754 -1.259608,-1.2595 -3.421998,-0.7172 -5.275334,0.7286 -0.754824,0.5887 -1.492114,1.2226 -2.210616,1.8589 -0.719271,-0.6371 -1.454944,-1.2695 -2.2106164,-1.8589 -1.1583356,-0.9037 -2.4586384,-1.4491 -3.5671306,-1.432 z"
+       id="rect3800"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

@@ -1,0 +1,4 @@
+JUCE Niall Edits
+----------------
+juce_KnownPluginList.cpp: L148: Added check to make sure the plugin format matches.
+juce_PluginListComponent.h: L47: Added missing "public FileDragAndDropTarget".

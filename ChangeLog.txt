@@ -1,0 +1,221 @@
+Pedalboard2 ChangeLog
+---------------------
+
+v2.14
+-----
+- Fixed BypassableInstance passing on MIDI messages that its plugin cleared.
+
+v2.13
+-----
+- Fixed MIDI mapping latch option to work the way you'd expect it to.
+- Fixed Audio Recorder deleting previously-recorded files if you re-loaded
+  them and edited the path to select a new destination file.
+- Added per-plugin MIDI channel filtering.
+- Fixed pure virtual function call if the app receives a MIDI signal while
+  it's closing.
+- Implemented MIDI learn for plugin and application mappings.
+- Plugin editor windows now take the plugin's user name as their title.
+- Fixed Looper crashing/deadlocking sometimes when starting recording via MIDI
+  (I hope; fingers crossed...).
+- Fixed File Player loop parameter not being set when loaded from a patch.
+- Length of the file is now drawn on the WaveformDisplay component (used by File
+  Player, Looper, Audio Recorder).
+- Fixed it so that File Player and Looper play buttons get updated when
+  triggered via MIDI.
+- Added Event Log to help when debugging MIDI and OSC issues.
+
+v2.12
+-----
+- Fixed midi-producing plugins not passing their midi output on.
+- Fixed it so the Looper won't crash if you hit record while it's already
+  playing.
+- Updated to JUCE v2.0.27.
+- Fixed bug in JUCE's PluginDirectoryScanner causing previously-crashed plugins
+  to get scanned repeatedly.
+
+v2.11
+-----
+- Dragging a sound file onto the plugin field now automatically creates a File
+  Player for it.
+- Sound file thumbnails should now get reloaded when their file changes.
+- Fixed Audio Recorder refusing to overwrite existing files and providing no
+  explanation as to why.
+- Added support for MIDI over OSC using the ',m' type tag.
+- Added support for MIDI over OSC as a triplet of ints or floats.
+- Fixed Audio Recorder not recording because it was unable to find a samplerate.
+- Fixed an assert when trying to add an OSC mapping for a plugin which doesn't
+  give all its parameters names.
+- Keypress mapping dialog no longer cuts off text (don't know why this suddenly
+  started working :/ ).
+- Moved delete filter button to top left, to make room for bypass button in its
+  old position.
+- Added toggle option to force fixed-size plugin editor windows.
+- Added a Looper processor.
+- Added bypass button for all filters.
+- Added support for multiple values in an OSC message (i.e. with something like
+  '/oscAddress 0.0 0.5 1.0' you can now select which of the three values you're
+  actually interested in).
+- Fixed shift-stereo connection for filters with greater than 2 outputs.
+- Added store audio settings in .pdl files option.
+
+v2.10
+-----
+- Fixed MIDI program change only ever switching to the first patch
+  (OSX-specific?).
+
+v2.09
+-----
+- Fix MIDI program change to work with individual patch numbers.
+- Added initial plugin preset functionality; presets can be altered and renamed,
+  and are saved with patches.
+- Added user presets for plugins. Presets saved by the user will automatically
+  get added on to the plugin's list of presets, and can be loaded via the same
+  interface used to load the plugin's internal presets.
+- Added User Preset Management window, where you can rename, copy, delete,
+  import and export user presets.
+- Added a popup box when MIDI program change is used to switch patches and an
+  out of bounds index is received.
+- Added basic metronome component.
+- Added file playback to metronome component.
+- Fixed the 'are you sure?'-on-quit dialog popping up even if the user made no
+  changes to the loaded file.
+- Added the option of running the app in the system tray (Windows & Linux only).
+- Fixed the 'are you sure?'-on-quit dialog popping up even if the user made no
+  changes to the loaded file (when the file was loaded from the command line).
+- Added documentation (via browser) link to Help Menu.
+- AudioUnit parameter changes now show up in plugin editors.
+
+v2.08
+-----
+- Changed MIDI->Application mappings to use a lock-free FIFO, making deadlocks
+  impossible (hopefully).
+- Altered tap tempo calculation: now takes the average of the last 4 taps.
+- Tap tempo via MIDI and OSC is now calculated from their respective threads
+  rather than the main message thread; this *should* be more accurate.
+- Changed OSC->Application mappings to use the same lock-free FIFO as the MIDI
+  mappings.
+- Now pops up an 'Are you sure?' dialog box if you quit without saving the
+  current patch.
+- Fixed bug with Patch Organiser inserting bogus patches if you did File->New
+  and had anything but the first patch selected when you did it.
+- Fixed *extremely* stupid bug with the Output Toggle; it was sheer coincidence
+  that it worked (or appeared to work) at all.
+- Main Transport should be more robust with regard to Audio Recorders.
+
+v2.07
+-----
+- Fixed the app not running on OSX 10.5.
+- Fixed issue where the app would deadlock if you tried to change patch via MIDI
+  before it had finished loading the current patch.
+
+v2.06
+-----
+- Custom plugin names are now updated when patches are loaded.
+- Fixed patch changing via MIDI (& OSC?) not working when the main window is
+  not focused.
+- Made sure patches saved pre-2.05 do not place plugin windows outside the
+  screen.
+- Patch Organiser move commands now update the selected row more sensibly.
+- Added option to have main transport respond to MMC commands.
+- Fixed some dialogs not taking on the colour scheme's window background colour.
+- Added toggle to switch patches via MIDI program change commands.
+- Fixed connections being drawn wrong when plugin names have been changed.
+- Fixed plugins' edited names persisting between patches.
+- Made sure connections stay behind plugin components once connected.
+- Added global tempo per patch. This is solely for the benefit of delay plugins
+  etc. which can make use of it to set sensible delay times. It is not a full
+  implementation of VST (etc.) time info structures. Plugins which require
+  information about bar starts, current ppq etc. are out of luck. Until I've
+  figured out how the app itself conceives of time those features are not going
+  to be added.
+- Can now hold shift while dragging a connection to automatically connect all
+  audio connections between the two plugins.
+- Can set tempo by tapping (either via a GUI control or via a
+  keyboard/MIDI CC/OSC command: see the Application Mappings window).
+- Refactored creation of mappings so they don't register themselves in their
+  constructors.
+- Added 'Save as Default file' option (current file saved as 'default.pdl'
+  inside the Pedalboard2 settings folder (<user>/AppData/Roaming/Pedalboard2 on
+  Windows, <user>/Library/Application Support/Pedalboard2 on OSX)).
+
+v2.05
+-----
+- Plugin file drag and drop no longer creates multiple instances (JUCE bug).
+- Can now drag and drop plugin files to the Available Plugins window (JUCE bug).
+- Audio Input and Midi Input toggles now save state.
+- Updated File->New etc. descriptions.
+- Fixed crash when trying to load a .pdl file with Midi/Osc Inputs disabled.
+- Fixed disabled Midi/Osc Inputs screwing up patch loading.
+- Added plugin window Always On Top toggle to Misc Settings.
+- Fixed plugin renaming incorrectly resizing the Plugin Component.
+- Added "Ignore plugin pin names" option to Misc Settings.
+- Moved over to the new modular version of JUCE.
+- Fixed plugin field scrolling behaviour.
+- Changing audio settings no longer requires a reload to get all the
+  input/output pins to show up.
+- Plugin window position is now saved.
+- Plugin window open/closed state is now saved.
+- Can no longer connect audio connections to parameter pins and vice versa.
+
+v2.04
+-----
+- Display the app's own icon in its titlebar.
+- New icon.
+- Wrote my own showModalDialog() method, so all the various child windows
+  can share the main app's icon for their titlebars.
+- Fixed Application Mappings dialog not saving changes (oops!).
+- Added tooltips.
+- Added support for custom colour schemes, including colour scheme editor.
+- Made it possible to have inverted MIDI mappings.
+- Removed GraphEditorPanel dependency.
+- Fixed plugins opening blank guis on OSX.
+- Fixed preferences files being saved in the wrong location on OSX.
+
+v2.03
+-----
+- Drag and drop loading of .pdl files.
+- Drag and drop loading of plugin files (.dll, .vst, .component).
+- Set FilePlayer's Sync to Main Transport button correctly on creation.
+- Saving an existing patch should no longer open the save as... dialog.
+- Dragging a PluginComponent outside the PluginField's bounds scrolls the
+  viewport.
+- Fixed Midi Input only accepting messages from the default device; now messages
+  from any devices ticked in the Audio Settings dialog will be available.
+- Special case fix for VAZ+, since it doesn't like being put in a resizable
+  window.
+- Basic OSC learn functionality; the app remembers every OSC address it's been
+  sent since it was started, and gives the user a combobox list of them.
+- Added the same OSC learn functionality to application mappings window.
+- Fixed memory leak in the mappings managers.
+- Larger hit test area for plugin pins (big enough now?).
+- Fixed plugins disappearing off the top left of the screen if you dragged
+  them and changed patch.
+- Made AudioFormatManager and AudioThumbnailCache singletons to simplify
+  things (not ideal, but the alternative would be an enormous pain in the
+  bum).
+- Added Audio Recorder component.
+- Use same stored folder for AudioRecorder as for FilePlayer.
+
+v2.02
+-----
+- Load pdl files from the command line.
+
+v2.01
+-----
+- Display the current computer's IP address in the about window.
+- Add Trigger parameter to File Player (to allow drum machine-style playing).
+- Make OSC mapping address text editor not require a return keypress.
+- Draw dragged connections centred on the mouse pointer.
+- Update PluginField bounds when a processor is moved outside them.
+- Made Level processor stereo.
+- VU Meter processor.
+- Ability to double-click a processor's title bar to change its name.
+- Give pins a larger hit test radius when dragging a connection.
+- Make sure 'Override plugin's MIDI...' button state persists after closing the
+  window.
+- Update to JUCE v1.54.27.
+- OSX Version.
+
+v2.00
+-----
+- Initial release.

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Looper Processor</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Looper Processor</h2>
+
+	<p>
+		<img src="images/Looper.png" alt="Looper processor"/>
+	</p>
+
+	<p>
+		The Looper processor is designed to easily record and play back seamless
+		loops of audio. Theoretically those loops can be of infinite length, but
+		in practice it will be limited by the capabilities of your machine
+		(primarily RAM). Audio is saved as .wav or .aiff files and can be loaded
+		and played back at a later date. The processor's input audio is always
+		mirrored to its output, though the level of that audio can be
+		altered.
+	</p>
+
+	<p>
+		The main controls are as follows:
+	</p>
+
+	<p>
+		<img src="images/LooperFile.png" alt="Looper file control"/>
+	</p>
+
+	<p>
+		This is used to select a sound file to save the recorded audio to. If
+		that file already exists and contains audio, that audio will be loaded
+		into the looper.
+	</p>
+
+	<p>
+		<img src="images/FilePlayerPlay.png" alt="Looper play button"/>
+	</p>
+
+	<p>
+		Starts the file playing from the looper's current position within the
+		file. If the file is already playing, clicking the button will pause it.
+		Playback will loop until the user pauses it.
+	</p>
+
+	<p>
+		<img src="images/FilePlayerRTZ.png" alt="Looper return-to-zero button"/>
+	</p>
+
+	<p>
+		Returns the looper's position within the file to the start of the file.
+	</p>
+
+	<p>
+		<img src="images/AudioRecorderRecord.png" alt="Looper record button"/>
+	</p>
+
+	<p>
+		Starts and stops recording.
+	</p>
+
+	<p>
+		<img src="images/FilePlayerSync.png" alt="Looper sync to main transport button"/>
+	</p>
+
+	<p>
+		If this is toggled on, the looper's transport (the play/pause and
+		return-to-zero buttons) will be synced to the app's main transport
+		(the two buttons in the centre of the lower panel in the main window).
+		This means that hitting play on the main transport will start the
+		looper playing, and can be used to start multiple Loopers, File
+		Players etc. playing at the same time.
+	</p>
+
+	<p>
+		<img src="images/LooperStopAfterBar.png" alt="Looper stop after bar button"/>
+	</p>
+
+	<p>
+		If this is toggled on, the looper will stop recording once a whole bar
+		has elapsed, based on the pedalboard's global tempo and the <em>Bar
+		Length</em> setting in the processor's editor window (see below).
+	</p>
+
+	<h3>Additional Editor Window Controls</h3>
+
+	<p>
+		In addition to the above controls, the looper exposes a number of extra
+		controls in its editor window.
+	</p>
+
+	<p>
+		<img src="images/LooperEditor.png" alt="Looper editor window"/>
+	</p>
+
+	<p>
+		These controls are as follows:
+	</p>
+
+	<p>
+		<img src="images/LooperBarLength.png" alt="Looper bar length editor"/>
+	</p>
+
+	<p>
+		This sets the length of the bar specified by the <em>Stop after bar</em>
+		control. As such it can easily be used to e.g. record multiple bars in
+		a 4/4 track by simply multiplying the numerator by the required amount
+		(i.e. 4 bars of 4/4 is 16/4).
+	</p>
+
+	<p>
+		<img src="images/LooperInputLevel.png" alt="Looper input level control"/>
+	</p>
+
+	<p>
+		This controls the level of the processor's input audio <em>as it appears
+		at the processor's output</em>. It does not effect the level of the
+		audio which will be recorded.
+	</p>
+
+	<p>
+		<img src="images/LooperLoopLevel.png" alt="Looper loop level control"/>
+	</p>
+
+	<p>
+		This controls the level of the processor's recorded loop audio.
+	</p>
+
+	<p>
+		<img src="images/LooperAutoplay.png" alt="Looper autoplay toggle"/>
+	</p>
+
+	<p>
+		If this is toggled on, the looper will automatically start playing
+		back the loop as soon as recording is halted.
+	</p>
+</div>
+
+</div>
+
+</body>

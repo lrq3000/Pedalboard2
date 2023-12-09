@@ -1,0 +1,82 @@
+p {
+	font-family: georgia, "times new roman", serif;
+	font-size: 16px;
+	color: #4A4B56;
+}
+
+h1 {
+	font-family: georgia, "times new roman", serif;
+	font-size: 32px;
+	font-weight: normal;
+	color: #5A5E82;
+	margin: 0px;
+}
+
+h2 {
+	font-family: georgia, "times new roman", serif;
+	font-size: 24px;
+	font-weight: normal;
+	color: #5A5E82;
+}
+
+h3 {
+	font-family: georgia, "times new roman", serif;
+	font-size: 18px;
+	font-weight: normal;
+	color: #5A5E82;
+}
+
+a {
+	color: #989BB8;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #2F3035;
+}
+
+li {
+	font-family: georgia, "times new roman", serif;
+	font-size: 16px;
+	color: #4A4B56;
+}
+
+#page {
+	width: 800px;
+}
+
+#index {
+	width: 170px;
+	position: relative;
+	float: left;
+	margin-top: 16px;
+}
+
+#content {
+	width: 630px;
+	position: relative;
+	float: right;
+}
+
+#footer {
+	float: left;
+}
+
+p.indexLinks {
+	font-size: 16px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+}
+
+p.indexSubLinks {
+	font-size: 14px;
+	margin-left: 16px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}

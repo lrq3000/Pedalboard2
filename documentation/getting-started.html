@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Getting Started</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Getting Started</h2>
+
+	<p>
+		Assuming this is the first time you've used the app, there are a few
+		things you'll want to setup before you can get the most out of it:
+	</p>
+
+	<ul>
+		<li>
+			<a href="getting-started.html#AudioSettings">Audio Settings</a>
+		</li>
+		<li>
+			<a href="getting-started.html#PluginList">Plugin List</a>
+		</li>
+		<li>
+			<a href="getting-started.html#YourFirstPatch">Your First Patch</a>
+		</li>
+		<li>
+			<a href="getting-started.html#ABasicMIDIMapping">A Basic MIDI Mapping</a>
+		</li>
+		<li>
+			<a href="getting-started.html#SwitchingBetweenPatches">Switching Between Patches</a>
+		</li>
+	</ul>
+	
+	<h2><a name="AudioSettings"></a>Audio Settings</h2>
+
+	<p>
+		To start off, you should check your audio settings are set up the way
+		you want. The Audio Settings dialog can be accessed from the Options
+		menu:
+	</p>
+	
+	<p>
+		<img src="images/Options-AudioSettings.png" alt="Audio Settings entry in the Options menu"/>
+	</p>
+
+	<p>
+		The available options are fairly standard, and should be familiar to you
+		from other apps.
+	</p>
+	
+	<p>
+		<img src="images/AudioSettings.png" alt="Audio Settings dialog"/>
+	</p>
+
+	<p>
+		Given that the Pedalboard is intended for realtime use, I'd recommend a
+		buffer size no more than 256 samples (this'll give you a total latency
+		of about 10ms). On Windows, you're probably better off going with your
+		soundcard's ASIO drivers, as they have traditionally had better low
+		latency performance. On OSX the standard CoreAudio drivers should be
+		fine.
+	</p>
+
+	<p>
+		The test button will send a short sine tone to your soundcard's output
+		so you can check everything's working correctly. Also note that
+		(although it's not shown here), you can select multiple MIDI inputs
+		if your system has more than one interface.
+	</p>
+
+	<h2><a name="PluginList"></a>Plugin List</h2>
+
+	<p>
+		Next you'll want to tell the app where to find your plugins. This is
+		done from the Plugin List dialog, which can again be accessed from
+		the Options menu:
+	</p>
+	
+	<p>
+		<img src="images/Options-PluginList.png" alt="Plugin List entry in the Options menu"/>
+	</p>
+
+	<p>
+		Here you'll see a list of all the available plugins on your system,
+		along with some useful metadata (of course, at the moment, all you can
+		see is the Pedalboard's built-in processors).
+	</p>
+	
+	<p>
+		<img src="images/PluginList.png" alt="Plugin List dialog"/>
+	</p>
+
+	<p>
+		To add your own plugins, click the <em>Options...</em> button, and
+		select <em>Scan for new or Updated VST plugins...</em> (note: OSX
+		users will also have an option to scan for AudioUnit plugins).
+	</p>
+	
+	<p>
+		<img src="images/PluginList-Scan1.png" alt="Plugin List Scan for Plugins menu entry"/>
+	</p>
+
+	<p>
+		This will bring up the following window, where you can add and remove
+		plugin directories with the <em>+</em> and <em>-</em> buttons.
+	</p>
+	
+	<p>
+		<img src="images/PluginList-Scan2.png" alt="Plugin List Scan folders dialog"/>
+	</p>
+
+	<p>
+		Clicking <em>Scan</em> will then attempt to load all the plugins it
+		finds in the directories you selected, one after the other, in order
+		to check that they are valid plugins. Once the scan is complete you
+		should see all your plugins listed in the <em>Available Plugins</em>
+		window.
+	</p>
+
+	<h2><a name="YourFirstPatch"></a>Your First Patch</h2>
+
+	<p>
+		Now that the app knows where to find your plugins, you can go ahead and
+		use them in a patch. All Pedalboard patches start off looking like this:
+	</p>
+	
+	<p>
+		<a href="images/NewPatch.png"><img src="images/NewPatch-sm.png" alt="New patch"/></a>
+	</p>
+
+	<p>
+		To add a plugin to the patch you simply double click in the main plugin
+		field. This will pop up a menu like so:
+	</p>
+	
+	<p>
+		<img src="images/PluginSelection.png" alt="Plugin menu selection"/>
+	</p>
+
+	<p>
+		Clicking on the plugin you're interested in will then add it to the
+		patch. All plugins are represented the same way; input ports are on the
+		left of the widget, output ports on the right. The three buttons along
+		the bottom of the widget are, respectively:
+	</p>
+
+	<ul>
+		<li>
+			<em><b>E</b>dit:</em> Opens the plugin's editor.
+		</li>
+		<li>
+			<em><b>M</b>appings:</em> Opens the plugin's mappings window.
+		</li>
+		<li>
+			<em>Delete <b>(x)</b>:</em> Deletes the plugin from the patch.
+		</li>
+	</ul>
+	
+	<p>
+		<img src="images/DecimateProcessor.png" alt="+decimate plugin processor"/>
+	</p>
+
+	<p>
+		To then connect the plugin to your soundcard's input, you simply drag
+		from the relevant port on the <em>Audio Input</em> processor, to your
+		desired port on the plugin.
+	</p>
+	
+	<p>
+		<a href="images/DecimatePatch.png"><img src="images/DecimatePatch-sm.png" alt="Basic +decimate patch"/></a>
+	</p>
+
+	<p>
+		To delete a connection, click on it to select it, then press the
+		<em>delete</em> or <em>backspace</em> key.
+	</p>
+
+	<h2><a name="ABasicMIDIMapping"></a>A Basic MIDI Mapping</h2>
+
+	<p>
+		One of the key motivations behind the development of the Pedalboard 2
+		was to provide an easy way of mapping plugin parameters to physical
+		controllers, so I'll quickly walk you through the process of mapping
+		a MIDI CC to a plugin parameter.
+	</p>
+	
+	<p>
+		<a href="images/DecimatePatch2.png"><img src="images/DecimatePatch2-sm.png" alt="Basic +decimate patch with MIDI mapping connection"/></a>
+	</p>
+
+	<p>
+		The first step is to drag a connection from the Midi Input processor
+		to the plugin's <em>param</em> input. By default this will automatically
+		open the plugin's Mappings window.
+	</p>
+	
+	<p>
+		<a href="images/DecimateMappings1.png"><img src="images/DecimateMappings1-sm.png" alt="+decimate plugin mappings window (empty)"/></a>
+	</p>
+
+	<p>
+		In this window you can setup a MIDI mapping by clicking the <em>add
+		MIDI</em> button.
+	</p>
+	
+	<p>
+		<a href="images/DecimateMappings2.png"><img src="images/DecimateMappings2-sm.png" alt="+decimate plugin mappings window (1 MIDI mapping)"/></a>
+	</p>
+
+	<p>
+		In the entry that is created, the left combo box selects the MIDI CC,
+		and the right combo box selects the parameter it will be mapped to. If
+		you play with your MIDI controller you should now see/hear the plugin's
+		parameter changing accordingly. For an explanation of the other
+		controls, see the <a href="midi-mappings.html">MIDI Mappings</a> page.
+	</p>
+
+	<h2><a name="SwitchingBetweenPatches"></a>Switching Between Patches</h2>
+
+	<p>
+		The last thing I'll discuss in this guide is one of the app's other
+		key features: patches. The Pedalboard is designed to make it easy to
+		set up multiple patches and quickly switch between them. The main
+		patch controls are located at the bottom left of the main screen:
+	</p>
+	
+	<p>
+		<img src="images/PatchControls.png" alt="Patch controls"/>
+	</p>
+
+	<p>
+		To add a new patch, you just click the combo box's drop down button,
+		and select <em>&lt;new patch&gt;</em>.
+	</p>
+	
+	<p>
+		<img src="images/NewPatchComboBox.png" alt="New patch combo box selection"/>
+	</p>
+
+	<p>
+		This will create a new patch, and you can now switch between it and your
+		original patch either via the combo box, or via the <em>+/-</em> buttons
+		to its right.
+	</p>
+
+	<p>
+		An important point to note is that patch switching can also be mapped to
+		MIDI CCs or Open Sound Control messages. For more information, check
+		the <a href="application-mappings.html">Application Mappings</a> page.
+	</p>
+
+	<p>
+		I'm going to stop here, because this guide has already gotten awfie
+		long, but be sure to check out the links on the left for more
+		information.
+	</p>
+</div>
+
+</div>
+
+</body>

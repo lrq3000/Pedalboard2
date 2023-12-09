@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Plugin Presets</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Plugin Presets</h2>
+
+	<p>
+		The Pedalboard has a unique way of handling plugin presets. As well as
+		letting users switch between the factory presets which came with the
+		plugin, the Pedalboard lets you save your own presets and have them
+		appear automatically in a plugin's preset list. The app will keep
+		track of all user presets and let you delete, copy, rename or export
+		them.
+	</p>
+
+	<ul>
+		<li>
+			<a href="plugins.html#PresetToolbar">The Preset Toolbar</a>
+		</li>
+		<li>
+			<a href="plugins.html#PresetManagement">User Preset Management</a>
+		</li>
+		<li>
+			<a href="plugins.html#PresetFiles">Preset Files</a>
+		</li>
+	</ul>
+
+	<h2><a name="PresetToolbar"></a>The Preset Toolbar</h2>
+	
+	<p>
+		<img src="images/DecimateEditor.png" alt="+decimate plugin editor"/>
+	</p>
+
+	<p>
+		The preset toolbard appears at the top of every plugin's editor window.
+		As can be seen in the image above, there are three controls in every
+		plugin's preset toolbar. From left to right:
+	</p>
+
+	<h3>Presets ComboBox</h3>
+	
+	<p>
+		<img src="images/PresetsComboBox.png" alt="presets combo box"/>
+	</p>
+
+	<p>
+		This Displays the current preset and lets you switch to a new one. If
+		you have saved any user presets, these will be listed at the end of the
+		drop-down list, after the plugin's factory presets.
+	</p>
+
+	<h3>Import Preset Button</h3>
+	
+	<p>
+		<img src="images/ImportPresetButton.png" alt="import preset button"/>
+	</p>
+
+	<p>
+		This lets you import a preset from a .fxp file. The imported preset will
+		replace the current preset's settings. Note that importing a preset with
+		this button will <i>not</i> automatically add it to the Pedalboard's
+		list of user presets for this plugin. To add an imported preset to the
+		list of user presets, you can either use the <i>Save Preset Button</i>
+		once the file has been imported, or import it directly to the list via
+		the User Preset Management window.
+	</p>
+
+	<h3>Save Preset Button</h3>
+	
+	<p>
+		<img src="images/SavePresetButton.png" alt="save preset button"/>
+	</p>
+
+	<p>
+		This saves the current plugin settings as a user preset, which may then
+		be accessed via the Presets combobox in the same way as the plugin's
+		factory presets. Once a user preset has been saved, it will then be
+		accessible to any instance of that plugin in the future.
+	</p>
+
+	<h2><a name="PresetManagement"></a>User Preset Management</h2>
+
+	<p>
+		The list of plugin user presets stored by the app can be managed via the
+		User Preset Management window. It can be accessed via <i>Edit-&gt;User
+		Preset Management</i>.
+	</p>
+	
+	<p>
+		<img src="images/EditUserPresetManagement.png" alt="Edit menu: User Preset Management"/>
+	</p>
+
+	<p>
+		The User Preset Management window lists all the user presets the
+		Pedalboard is aware of, and provides options to rename, copy, delete,
+		and import and export them. Any changes made here will then show up in
+		the affected plugin's list of presets.
+	</p>
+	
+	<p>
+		<img src="images/UserPresetManagement.png" alt="User Preset Management window"/>
+	</p>
+
+	<p>
+		Rename, Copy and Remove are fairly self-explanatory. Note that Remove
+		will delete the preset from the system, after which it cannot be
+		retrieved.
+	</p>
+
+	<p>
+		The Import button will import a preset into the list of user presets
+		from a .fxp file. This is a two-step process; before selecting the .fxp
+		file to import, you must first select which plugin the preset applies
+		to.
+	</p>
+
+	<p>
+		The Export button will export the selected preset as a .fxp file, which
+		may be used in other hosts.
+	</p>
+
+	<h2><a name="PresetFiles"></a>Preset Files</h2>
+
+	<p>
+		All user presets are stored as .fxp files within the <i>presets</i>
+		subdirectory of the Pedalboard's user data directory. See the
+		<a href="pedalboard-files.html">Pedalboard Files</a> page for more
+		details.
+	</p>
+</div>
+
+</div>
+
+</body>

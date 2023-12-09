@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="3UJXL4w" name="Pedalboard2" projectType="guiapp" version="2.09"
+              juceLinkage="amalg_multi" buildVST="1" buildRTAS="0" buildAU="1"
+              pluginName="Juce Project" pluginDesc="Juce Project" pluginManufacturer="yourcompany"
+              pluginManufacturerCode="Manu" pluginCode="Plug" pluginChannelConfigs="{1, 1}, {2, 2}"
+              pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
+              pluginSilenceInIsSilenceOut="0" pluginTailLength="0" pluginEditorRequiresKeys="0"
+              pluginAUExportPrefix="JuceProjectAU" pluginAUViewClass="JuceProjectAU_V1"
+              pluginRTASCategory="" bundleIdentifier="com.niallmoody.Pedalboard2"
+              jucerVersion="3.0.0">
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="../../vstsdk2.4" rtasFolder="~/SDKs/PT_80_SDK"
+               juceFolder="../../juce" objCExtraSuffix="vq7ZpG" bigIcon="TiVs90"
+               smallIcon="rCXKf8">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Pedalboard2"
+                       osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       headerPath="C:/Users/Niall/Programming/vstsdk2.4;C:/Users/Niall/Programming/asiosdk2/common"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="2" targetName="Pedalboard2"
+                       osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       headerPath="C:/Users/Niall/Programming/vstsdk2.4;C:/Users/Niall/Programming/asiosdk2/common"/>
+      </CONFIGURATIONS>
+    </XCODE_MAC>
+    <VS2010 targetFolder="Builds/VisualStudio2010" vstFolder="..\..\vstsdk2.4"
+            rtasFolder="c:\SDKs\PT_80_SDK" libraryType="1" juceFolder="..\..\juce"
+            extraCompilerFlags="/wd4100" bigIcon="TiVs90" smallIcon="rCXKf8">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Pedalboard2"
+                       headerPath="C:/Users/Niall/Programming/vstsdk2.4;C:/Users/Niall/Programming/asiosdk2/common"
+                       winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="2" targetName="Pedalboard2"
+                       headerPath="C:/Users/Niall/Programming/vstsdk2.4;C:/Users/Niall/Programming/asiosdk2/common"
+                       winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"/>
+      </CONFIGURATIONS>
+    </VS2010>
+    <LINUX_MAKE targetFolder="Builds/Linux" juceFolder="juce/modules" bigIcon="TiVs90"
+                smallIcon="rCXKf8" vstFolder="">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Pedalboard2"
+                       headerPath="" libraryPath="/usr/X11R6/lib/"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="2" targetName="Pedalboard2"
+                       headerPath="" libraryPath="/usr/X11R6/lib/"/>
+      </CONFIGURATIONS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MAINGROUP id="PKH1Rn5" name="Pedalboard2">
+    <FILE id="rCXKf8" name="icon-48.png" compile="0" resource="1" file="icon\icon-48.png"/>
+    <FILE id="TiVs90" name="icon-512.png" compile="0" resource="1" file="icon\icon-512.png"/>
+    <GROUP id="JcutFFf" name="Source">
+      <FILE id="M5cSio" name="AboutPage.cpp" compile="1" resource="0" file="src/AboutPage.cpp"/>
+      <FILE id="H0yVrF" name="AboutPage.h" compile="0" resource="0" file="src/AboutPage.h"/>
+      <FILE id="xYAatF" name="App.cpp" compile="1" resource="0" file="src/App.cpp"/>
+      <FILE id="dZSUtt" name="App.h" compile="0" resource="0" file="src/App.h"/>
+      <FILE id="beVqU0" name="ApplicationMappingsEditor.cpp" compile="1"
+            resource="0" file="src/ApplicationMappingsEditor.cpp"/>
+      <FILE id="kYrKMB" name="ApplicationMappingsEditor.h" compile="0" resource="0"
+            file="src/ApplicationMappingsEditor.h"/>
+      <FILE id="Ib99ff" name="AudioRecorderControl.cpp" compile="1" resource="0"
+            file="src/AudioRecorderControl.cpp"/>
+      <FILE id="UcXBzY" name="AudioRecorderControl.h" compile="0" resource="0"
+            file="src/AudioRecorderControl.h"/>
+      <FILE id="aYTT6F" name="AudioSingletons.cpp" compile="1" resource="0"
+            file="src/AudioSingletons.cpp"/>
+      <FILE id="Q76b0K" name="AudioSingletons.h" compile="0" resource="0"
+            file="src/AudioSingletons.h"/>
+      <FILE id="gnomwK" name="BranchesLAF.cpp" compile="1" resource="0" file="src/BranchesLAF.cpp"/>
+      <FILE id="abowhl" name="BranchesLAF.h" compile="0" resource="0" file="src/BranchesLAF.h"/>
+      <FILE id="cKU4k4" name="ColourScheme.cpp" compile="1" resource="0"
+            file="src/ColourScheme.cpp"/>
+      <FILE id="LxG4ep" name="ColourScheme.h" compile="0" resource="0" file="src/ColourScheme.h"/>
+      <FILE id="CzsGZ2" name="ColourSchemeEditor.cpp" compile="1" resource="0"
+            file="src/ColourSchemeEditor.cpp"/>
+      <FILE id="FkjiWk" name="ColourSchemeEditor.h" compile="0" resource="0"
+            file="src/ColourSchemeEditor.h"/>
+      <FILE id="Ctsphw" name="FilePlayerControl.cpp" compile="1" resource="0"
+            file="src/FilePlayerControl.cpp"/>
+      <FILE id="GAo5YN" name="FilePlayerControl.h" compile="0" resource="0"
+            file="src/FilePlayerControl.h"/>
+      <FILE id="cicFLE" name="FilterGraph.cpp" compile="1" resource="0" file="src/FilterGraph.cpp"/>
+      <FILE id="M4rFBn" name="FilterGraph.h" compile="0" resource="0" file="src/FilterGraph.h"/>
+      <FILE id="q3L9I9" name="Images.cpp" compile="1" resource="0" file="src/Images.cpp"/>
+      <FILE id="EBRLSd" name="Images.h" compile="0" resource="0" file="src/Images.h"/>
+      <FILE id="QEGotv" name="InternalFilters.cpp" compile="1" resource="0"
+            file="src/InternalFilters.cpp"/>
+      <FILE id="qEizVe" name="InternalFilters.h" compile="0" resource="0"
+            file="src/InternalFilters.h"/>
+      <FILE id="cTjVgf" name="JuceHelperStuff.cpp" compile="1" resource="0"
+            file="src/JuceHelperStuff.cpp"/>
+      <FILE id="C3qeVV" name="JuceHelperStuff.h" compile="0" resource="0"
+            file="src/JuceHelperStuff.h"/>
+      <FILE id="T0q9X5" name="LookAndFeelImages.cpp" compile="1" resource="0"
+            file="src/LookAndFeelImages.cpp"/>
+      <FILE id="mKD8aA" name="LookAndFeelImages.h" compile="0" resource="0"
+            file="src/LookAndFeelImages.h"/>
+      <FILE id="rKA8he" name="MainPanel.cpp" compile="1" resource="0" file="src/MainPanel.cpp"/>
+      <FILE id="vYnNLk" name="MainPanel.h" compile="0" resource="0" file="src/MainPanel.h"/>
+      <FILE id="fOCKz7" name="MainTransport.cpp" compile="1" resource="0"
+            file="src/MainTransport.cpp"/>
+      <FILE id="x2leXm" name="MainTransport.h" compile="0" resource="0" file="src/MainTransport.h"/>
+      <FILE id="JDhPx7" name="Mapping.cpp" compile="1" resource="0" file="src/Mapping.cpp"/>
+      <FILE id="tftU1v" name="Mapping.h" compile="0" resource="0" file="src/Mapping.h"/>
+      <FILE id="e5QrNf" name="MappingEntryMidi.cpp" compile="1" resource="0"
+            file="src/MappingEntryMidi.cpp"/>
+      <FILE id="r1dObk" name="MappingEntryMidi.h" compile="0" resource="0"
+            file="src/MappingEntryMidi.h"/>
+      <FILE id="SoCpbS" name="MappingEntryOsc.cpp" compile="1" resource="0"
+            file="src/MappingEntryOsc.cpp"/>
+      <FILE id="z3zaPc" name="MappingEntryOsc.h" compile="0" resource="0"
+            file="src/MappingEntryOsc.h"/>
+      <FILE id="Wq31xT" name="MappingsDialog.cpp" compile="1" resource="0"
+            file="src/MappingsDialog.cpp"/>
+      <FILE id="MxFaNd" name="MappingsDialog.h" compile="0" resource="0"
+            file="src/MappingsDialog.h"/>
+      <FILE id="SnueDk" name="MappingSlider.cpp" compile="1" resource="0"
+            file="src/MappingSlider.cpp"/>
+      <FILE id="bz7c3D" name="MappingSlider.h" compile="0" resource="0" file="src/MappingSlider.h"/>
+      <FILE id="hzsnXx" name="MetronomeControl.cpp" compile="1" resource="0"
+            file="src/MetronomeControl.cpp"/>
+      <FILE id="tY2r0n" name="MetronomeControl.h" compile="0" resource="0"
+            file="src/MetronomeControl.h"/>
+      <FILE id="ELmnQr" name="MidiAppFifo.cpp" compile="1" resource="0" file="src/MidiAppFifo.cpp"/>
+      <FILE id="ZjiY0C" name="MidiAppFifo.h" compile="0" resource="0" file="src/MidiAppFifo.h"/>
+      <FILE id="gGtS5Y" name="MidiMappingManager.cpp" compile="1" resource="0"
+            file="src/MidiMappingManager.cpp"/>
+      <FILE id="NweO8J" name="MidiMappingManager.h" compile="0" resource="0"
+            file="src/MidiMappingManager.h"/>
+      <FILE id="TUDvkM" name="OscMappingManager.cpp" compile="1" resource="0"
+            file="src/OscMappingManager.cpp"/>
+      <FILE id="UAKNaf" name="OscMappingManager.h" compile="0" resource="0"
+            file="src/OscMappingManager.h"/>
+      <FILE id="eqFFE1" name="PatchOrganiser.cpp" compile="1" resource="0"
+            file="src/PatchOrganiser.cpp"/>
+      <FILE id="MHootJ" name="PatchOrganiser.h" compile="0" resource="0"
+            file="src/PatchOrganiser.h"/>
+      <FILE id="nOmDOX" name="PedalboardProcessorEditors.cpp" compile="1"
+            resource="0" file="src/PedalboardProcessorEditors.cpp"/>
+      <FILE id="aJC9Jm" name="PedalboardProcessorEditors.h" compile="0" resource="0"
+            file="src/PedalboardProcessorEditors.h"/>
+      <FILE id="BJFvMQ" name="PedalboardProcessors.cpp" compile="1" resource="0"
+            file="src/PedalboardProcessors.cpp"/>
+      <FILE id="erh2jX" name="PedalboardProcessors.h" compile="0" resource="0"
+            file="src/PedalboardProcessors.h"/>
+      <FILE id="ZL6222" name="PluginComponent.cpp" compile="1" resource="0"
+            file="src/PluginComponent.cpp"/>
+      <FILE id="ngIjmH" name="PluginComponent.h" compile="0" resource="0"
+            file="src/PluginComponent.h"/>
+      <FILE id="vQ9CGu" name="PluginField.cpp" compile="1" resource="0" file="src/PluginField.cpp"/>
+      <FILE id="DlXAiX" name="PluginField.h" compile="0" resource="0" file="src/PluginField.h"/>
+      <FILE id="fo1dBP" name="PreferencesDialog.cpp" compile="1" resource="0"
+            file="src/PreferencesDialog.cpp"/>
+      <FILE id="OeYctc" name="PreferencesDialog.h" compile="0" resource="0"
+            file="src/PreferencesDialog.h"/>
+      <FILE id="WW7Xj2" name="PresetBar.cpp" compile="1" resource="0" file="src/PresetBar.cpp"/>
+      <FILE id="tYXVZe" name="PresetBar.h" compile="0" resource="0" file="src/PresetBar.h"/>
+      <FILE id="qrmB2z" name="PresetManager.cpp" compile="1" resource="0"
+            file="src/PresetManager.cpp"/>
+      <FILE id="ovUXC3" name="PresetManager.h" compile="0" resource="0" file="src/PresetManager.h"/>
+      <FILE id="kvj8aQ" name="PropertiesSingleton.cpp" compile="1" resource="0"
+            file="src/PropertiesSingleton.cpp"/>
+      <FILE id="ic5Yga" name="PropertiesSingleton.h" compile="0" resource="0"
+            file="src/PropertiesSingleton.h"/>
+      <FILE id="Qt3FEw" name="TapTempoBox.cpp" compile="1" resource="0" file="src/TapTempoBox.cpp"/>
+      <FILE id="seDEWk" name="TapTempoBox.h" compile="0" resource="0" file="src/TapTempoBox.h"/>
+      <FILE id="Wm2g9Q" name="TapTempoHelper.cpp" compile="1" resource="0"
+            file="src/TapTempoHelper.cpp"/>
+      <FILE id="pPAf8u" name="TapTempoHelper.h" compile="0" resource="0"
+            file="src/TapTempoHelper.h"/>
+      <FILE id="uaPyTv" name="TrayIcon.cpp" compile="1" resource="0" file="src/TrayIcon.cpp"/>
+      <FILE id="ngIvaI" name="TrayIcon.h" compile="0" resource="0" file="src/TrayIcon.h"/>
+      <FILE id="ItViSv" name="UserPresetWindow.cpp" compile="1" resource="0"
+            file="src/UserPresetWindow.cpp"/>
+      <FILE id="WbJ8CZ" name="UserPresetWindow.h" compile="0" resource="0"
+            file="src/UserPresetWindow.h"/>
+      <FILE id="mKCKdy" name="Vectors.cpp" compile="1" resource="0" file="src/Vectors.cpp"/>
+      <FILE id="jYpdo1" name="Vectors.h" compile="0" resource="0" file="src/Vectors.h"/>
+      <FILE id="mQZSZx" name="WaveformDisplay.cpp" compile="1" resource="0"
+            file="src/WaveformDisplay.cpp"/>
+      <FILE id="sGWo82" name="WaveformDisplay.h" compile="0" resource="0"
+            file="src/WaveformDisplay.h"/>
+      <GROUP id="{4130C292-7248-6AAE-465D-F164F5A9B1D1}" name="NiallsOSCLib">
+        <FILE id="Ge2bcw" name="OSCBase.h" compile="0" resource="0" file="src/NiallsOSCLib/OSCBase.h"/>
+        <FILE id="WRDFu0" name="OSCBundle.cpp" compile="1" resource="0" file="src/NiallsOSCLib/OSCBundle.cpp"/>
+        <FILE id="qqskCk" name="OSCBundle.h" compile="0" resource="0" file="src/NiallsOSCLib/OSCBundle.h"/>
+        <FILE id="mBGivu" name="OSCMessage.cpp" compile="1" resource="0" file="src/NiallsOSCLib/OSCMessage.cpp"/>
+        <FILE id="SikHBG" name="OSCMessage.h" compile="0" resource="0" file="src/NiallsOSCLib/OSCMessage.h"/>
+        <FILE id="fUilUD" name="OSCTimeTag.cpp" compile="1" resource="0" file="src/NiallsOSCLib/OSCTimeTag.cpp"/>
+        <FILE id="PinKXT" name="OSCTimeTag.h" compile="0" resource="0" file="src/NiallsOSCLib/OSCTimeTag.h"/>
+      </GROUP>
+      <GROUP id="{90CF695E-EA12-83DC-5360-F544C8761F9B}" name="NiallsSocketLib">
+        <FILE id="u3bjoR" name="UDPSocket.cpp" compile="1" resource="0" file="src/NiallsSocketLib/UDPSocket.cpp"/>
+        <FILE id="P6knm3" name="UDPSocket.h" compile="0" resource="0" file="src/NiallsSocketLib/UDPSocket.h"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_ASIO="enabled" JUCE_WASAPI="enabled" JUCE_DIRECTSOUND="enabled"
+               JUCE_ALSA="enabled" JUCE_USE_FLAC="enabled" JUCE_USE_OGGVORBIS="enabled"
+               JUCE_PLUGINHOST_VST="enabled" JUCE_PLUGINHOST_AU="enabled"/>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1"/>
+    <MODULE id="juce_events" showAllCode="1"/>
+    <MODULE id="juce_graphics" showAllCode="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1"/>
+    <MODULE id="juce_gui_audio" showAllCode="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1"/>
+    <MODULE id="juce_video" showAllCode="1"/>
+    <MODULE id="juce_opengl" showAllCode="1"/>
+    <MODULE id="juce_audio_basics" showAllCode="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+</JUCERPROJECT>

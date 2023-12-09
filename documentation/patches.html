@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Patches</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Patches</h2>
+
+	<p>
+		One of the core Pedalboard concepts is that of Patches. A patch is
+		essentially a collection of plugins and the signal path through
+		them from audio input to audio output. This page explains the various
+		associated functions.
+	</p>
+
+	<ul>
+		<li>
+			<a href="patches.html#PatchSelection">Patch Selection</a>
+		</li>
+		<li>
+			<a href="patches.html#PatchOrganiser">Patch Organiser</a>
+		</li>
+	</ul>
+
+	<h2><a name="PatchSelection"></a>Patch Selection</h2>
+
+	<p>
+		Switching between patches is done with the three patch controls at the
+		bottom left of the main window:
+	</p>
+
+	<p>
+		<img src="images/PatchControls.png" alt="Patch controls"/>
+	</p>
+
+	<p>
+		The <em>-/+</em> buttons will iterate through the available patches
+		one-by-one, while the <em>Patches:</em> combobox lets you select from
+		a list of all the available patches. Note that the combobox text is
+		editable; to change the name of the currently-selected patch, you just
+		click its text in the combobox.
+	</p>
+
+	<p>
+		Also note that you can switch between patches with MIDI or OSC by
+		setting up the relevant
+		<a href="application-mappings.html">Application Mappings</a>.
+	</p>
+	
+	<p>
+		<img src="images/NewPatchComboBox.png" alt="New patch combo box selection"/>
+	</p>
+
+	<p>
+		To add a new patch, simply select <em>&lt;new patch&gt;</em> from the
+		end of the combobox list.
+	</p>
+
+	<h2><a name="PatchOrganiser"></a>Patch Organiser</h2>
+
+	<p>
+		For more control over the organisation of your patches, there is a
+		Patch Organiser window, accessible via the <em>Organise patches</em>
+		entry in the <em>Edit</em> menu.
+	</p>
+	
+	<p>
+		<img src="images/PatchOrganiserMenu.png" alt="Edit menu->Organise patches"/>
+	</p>
+
+	<p>
+		The Patch Organiser window lets you copy, rename, remove, import and
+		rearrange patches.
+	</p>
+	
+	<p>
+		<img src="images/PatchOrganiser.png" alt="Patch Organiser window"/>
+	</p>
+
+	<p>
+		Most of those functions are self-explanatory. The import button lets you
+		import a patch from another Pedalboard2 .pdl file, making it easy to
+		re-use individual patches between files. To rename a patch, simply
+		double-click its entry in the window's list box.
+	</p>
+</div>
+
+</div>
+
+</body>

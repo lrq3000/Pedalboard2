@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Misc Settings</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Misc Settings</h2>
+
+	<p>
+		The Pedalboard has a number of miscellaneous settings accessible via
+		<em>Options-&gt;Misc Settings</em>.
+	</p>
+	
+	<p>
+		<img src="images/MiscSettings.png" alt="Misc Settings dialog"/>
+	</p>
+
+	<ul>
+		<li>
+			<a href="misc-settings.html#OSCOptions">Open Sound Control Options</a>
+		</li>
+		<li>
+			<a href="misc-settings.html#VisibleIONodes">Visible I/O Nodes</a>
+		</li>
+		<li>
+			<a href="misc-settings.html#MidiOptions">Midi Options</a>
+		</li>
+		<li>
+			<a href="misc-settings.html#OtherOptions">Other Options</a>
+		</li>
+	</ul>
+	
+	<h2><a name="OSCOptions"></a>Open Sound Control Options</h2>
+	
+	<p>
+		<img src="images/MiscSettings-OSC.png" alt="Misc Settings dialog; Open Sound Control Options"/>
+	</p>
+
+	<h3>OSC Port</h3>
+
+	<p>
+		This sets which port the app listens on for Open Sound Control messages.
+		See the <a href="osc-mappings.html">OSC Mappings</a> page for more
+		details.
+	</p>
+
+	<h3>OSC Multicast Address</h3>
+
+	<p>
+		This option is for situations where you want to use a single OSC client
+		to send OSC messages to multiple OSC servers (like the Pedalboard). To
+		make use of it you must choose an ip address from the specially-defined
+		range <em>224.0.0.0 - 239.255.255.255</em> and enter it into the text
+		box. The Pedalboard will then respond to OSC messages received on that
+		address rather than the ip address displayed in the <em>About</em> box.
+		The same OSC messages will be broadcast simultaneously to any other OSC
+		servers which are listening on that multicast address. If left blank,
+		the Pedalboard will default to a one-to-one connection (messages sent
+		from an OSC client will only go to the Pedalboard). For more
+		information on ip multicasting, see
+		<a href="http://en.wikipedia.org/wiki/IP_multicast">wikipedia</a>.
+	</p>
+	
+	<h2><a name="VisibleIONodes"></a>Visible I/O Nodes</h2>
+	
+	<p>
+		<img src="images/MiscSettings-IONodes.png" alt="Misc Settings dialog; Visible I/O Nodes"/>
+	</p>
+
+	<p>
+		These toggle buttons let you hide any I/O nodes you're not interested
+		in.
+	</p>
+	
+	<h2><a name="MidiOptions"></a>Midi Options</h2>
+	
+	<p>
+		<img src="images/MiscSettings-MidiOptions.png" alt="Misc Settings dialog; Midi Options"/>
+	</p>
+
+	<h3>Program Change messages switch patches</h3>
+
+	<p>
+		Toggling this option will let you switch patches via MIDI Program
+		Change messages (note that you can also use MIDI CCs to change patches,
+		via the <a href="application-mappings.html">Application Mappings</a>
+		dialog).
+	</p>
+
+	<h3>Main transport responds to MMC</h3>
+
+	<p>
+		Toggling this option will let you control the app's main transport
+		with Midi Machine Control messages (note that you can also use MIDI CCs
+		to control the main transport, via the
+		<a href="application-mappings.html">Application Mappings</a> dialog).
+	</p>
+	
+	<h2><a name="OtherOptions"></a>Other Options</h2>
+	
+	<p>
+		<img src="images/MiscSettings-OtherOptions.png" alt="Misc Settings dialog; Other Options"/>
+	</p>
+
+	<h3>Open mappings window on successful param connection</h3>
+
+	<p>
+		By default, dragging a connection to a plugin's param input will open
+		that plugin's mappings window. This toggle button lets you switch that
+		option off.
+	</p>
+
+	<h3>Loop next/prev patch action</h3>
+
+	<p>
+		If this button is toggled on, patch selection will loop (i.e. sending
+		the app a <em>next patch</em> message (either via MIDI/OSC or the next
+		patch UI button) while on the last available patch will switch back to
+		the first patch, and vice versa).
+	</p>
+
+	<h3>Set plugin windows Always On Top</h3>
+
+	<p>
+		If this button is toggled on, plugin editor windows will stay in front
+		of the main Pedalboard window (and any other windows you might have
+		open).
+	</p>
+
+	<h3>Ignore plugin pin names</h3>
+
+	<p>
+		Because of the way the pedalboard draws plugin nodes, plugins with long
+		pin names can generate unnecessarily wide nodes. Toggling this button on
+		will cause the Pedalboard to rename all input and output pins with
+		short generic names.
+	</p>
+
+	<h3>Display tray icon</h3>
+
+	<p>
+		If toggled on, this option will place a Pedalboard 2 icon in the system
+		tray. This icon can be double-clicked to show/hide the main Pedalboard
+		window, and also has a right-click menu to do the same. If this option
+		is toggled on, clicking the window's close button <em>will not close the
+		application</em>; to close the application use the icon's right-click
+		menu.
+	</p>
+
+	<p>
+		Not available on OSX.
+	</p>
+
+	<h3>Start in tray</h3>
+
+	<p>
+		If the <em>Display tray icon</em> option is toggled on, this option can
+		be used to start the application in the tray, with no window visible.
+		This can be used in addition to a
+		<a href="pedalboard-files.html#TheDefaultFile">default file</a> to start
+		the app running with a particular setup that doesn't require user
+		interaction.
+	</p>
+
+	<p>
+		This option will be greyed out on OSX, or if <em>Display tray icon</em>
+		is not toggled on.
+	</p>
+
+	<h3>Force fixed-size plugin windows</h3>
+
+	<p>
+		This is a compatibility option, for badly-behaved plugins which do not
+		display their editors when the app provides them with a resizable
+		window.
+	</p>
+
+	<h3>Save audio settings in .pdl files</h3>
+
+	<p>
+		If toggled on, this option will store the current audio settings
+		alongside any patch settings when doing <em>File->Save/Save As</em>.
+		When loading a .pdl file with audio settings stored in it, those
+		settings will be applied before the patch itself is loaded.
+	</p>
+
+	<p>
+		Note: audio settings will only be loaded from .pdl files if this
+		option is toggled on; otherwise they will be ignored.
+	</p>
+</div>
+
+</div>
+
+</body>

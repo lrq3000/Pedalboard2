@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: MIDI Mappings</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>MIDI Mappings</h2>
+
+	<p>
+		Plugin parameters can be mapped to MIDI CCs via the <em>add MIDI</em>
+		button in the plugin's Mappings Window. This page explains the various
+		controls.
+	</p>
+
+	<ul>
+		<li>
+			<a href="midi-mappings.html#MappingParameters">Mapping Parameters</a>
+		</li>
+		<li>
+			<a href="midi-mappings.html#OverridePlugin">Plugins With Their Own MIDI Mappings</a>
+		</li>
+	</ul>
+
+	<h2><a name="MappingParameters"></a>Mapping Parameters</h2>
+
+	<p>
+		When setting up a MIDI mapping, you are presented with the following
+		parameters:
+	</p>
+
+	<p>
+		<img src="images/MidiMapping.png" alt="A basic MIDI mapping"/>
+	</p>
+
+	<p>
+		These are, from left to right:
+	</p>
+
+	<p>
+		<b>MIDI CC:</b> The MIDI CC to map to your plugin's parameter. Note the
+		<i>&lt;&lt; MIDI Learn &gt;&gt;</i> entry: when this is selected, the
+		CC value will be automatically set to the next MIDI CC that the
+		pedalboard receives.
+	</p>
+
+	<p>
+		<b>Latch CC Value:</b> This is for use with e.g. physical buttons which
+		are momentary (they output an <em>on</em> signal while being pressed,
+		and an <em>off</em> signal when not). Setting this control to on will
+		mean that your physical, momentary, button will act as a toggle button:
+		push it once to send an <em>on</em> signal, push it again to send an
+		<em>off</em> signal. 
+	</p>
+
+	<p>
+		<b>Parameter Range:</b> These sliders let you set the range that the
+		MIDI CC input is mapped to on the plugin. The top slider represents
+		the lower limit of the range, and the bottom slider represents the
+		upper limit. By default the sliders are set as shown above, which
+		maps the full range of the MIDI CC value to the full range of the
+		plugin parameter. Note that the sliders can be reversed to create
+		an inverted mapping.
+	</p>
+
+	<p>
+		<b>Plugin Parameter:</b> The parameter of the plugin which is being
+		mapped to a MIDI CC.
+	</p>
+
+	<h2><a name="OverridePlugin"></a>Plugins With Their Own MIDI Mappings</h2>
+
+	<p>
+		Some plugins will have their own, hard-coded MIDI Mappings already set
+		up (e.g. MIDI CC #7 set to control the output volume). As this may
+		prove undesirable in certain cases, you can tell the Pedalboard to
+		override this behaviour by toggling the button at the bottom of the
+		Mappings window:
+	</p>
+
+	<p>
+		<img src="images/OverridePluginMidi.png" alt="Override plugin's default MIDI behaviour button"/>
+	</p>
+</div>
+
+</div>
+
+</body>

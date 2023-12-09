@@ -1,0 +1,21 @@
+Colour Scheme Colours
+---------------------
+- Window background.
+- Plugin field background.
+- Text colour.
+- Plugin border colour.
+- Plugin background colour.
+- Audio connection colour.
+- Parameter connection colour.
+- Button colour.
+- Button highlight colour.
+- Text editor colour.
+- Dialog inner background.
+- CPU meter colour.
+- Toggle/slider colour.
+- List selected colour.
+- VU meter lower colour.
+- VU meter upper colour.
+- VU meter over colour.
+- Vector drawings colour.
+- Menu selection colour.

@@ -1,0 +1,14 @@
+juce_mac_SystemStats.mm:
+------------------------
+
+HiResCounterHandler():
+		if(denominator == 0)
+			denominator = 1000000;
+
+millisecondsSinceStartup():
+		int64 temp = denominator;
+
+		if(temp == 0)
+			temp = 1000000;
+
+        return (uint32) ((mach_absolute_time() * numerator) / temp);

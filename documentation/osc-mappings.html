@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Pedalboard 2 Documentation: Open Sound Control Mappings</title>
+<meta name="keywords" content="Pedalboard 2">
+
+<link rel="Stylesheet" href="style.css" type="text/css" title="Default" media="screen">
+</head>
+
+<body>
+
+<div ID="page">
+
+<div ID="header">
+<h1>Pedalboard 2 Documentation</h1>
+</div>
+
+<div ID="index">
+	<p class="indexLinks"><a href="index.html">Introduction</a></p>
+	<p class="indexLinks"><a href="getting-started.html">Getting Started</a></p>
+	<p class="indexLinks"><a href="plugins.html">Plugins</a></p>
+		<p class="indexSubLinks"><a href="plugin-presets.html">- Plugin Presets</a></p>
+	<p class="indexLinks"><a href="midi-mappings.html">MIDI Mappings</a></p>
+	<p class="indexLinks"><a href="osc-mappings.html">OSC Mappings</a></p>
+		<p class="indexSubLinks"><a href="osc-primer.html">- OSC Primer</a></p>
+	<p class="indexLinks"><a href="application-mappings.html">Application Mappings</a></p>
+	<p class="indexLinks"><a href="patches.html">Patches</a></p>
+	<p class="indexLinks"><a href="pedalboard-files.html">Pedalboard Files</a></p>
+	<p class="indexLinks"><a href="misc-settings.html">Misc Settings</a></p>
+	<p class="indexLinks"><a href="colour-schemes.html">Colour Schemes</a></p>
+	<p class="indexLinks"><a href="built-in-processors.html">Built-in Processors</a></p>
+		<p class="indexSubLinks"><a href="component-level.html">- Level</a></p>
+		<p class="indexSubLinks"><a href="component-output-toggle.html">- Output Toggle</a></p>
+		<p class="indexSubLinks"><a href="component-file-player.html">- File Player</a></p>
+		<p class="indexSubLinks"><a href="component-vu-meter.html">- VU Meter</a></p>
+		<p class="indexSubLinks"><a href="component-audio-recorder.html">- Audio Recorder</a></p>
+		<p class="indexSubLinks"><a href="component-metronome.html">- Metronome</a></p>
+		<p class="indexSubLinks"><a href="component-looper.html">- Looper</a></p>
+</div>
+
+<div ID="content">
+	<h2>Open Sound Control Mappings</h2>
+
+	<p>
+		Plugin parameters can be mapped to Open Sound Control (OSC) addresses
+		via the <em>add OSC</em> button in the plugin's Mappings Window. This
+		page explains the various controls. If you are new to the Open Sound
+		Control protocol, you may want to read the
+		<a href="osc-primer.html">Open Sound Control Primer</a> page.
+	</p>
+
+	<ul>
+		<li>
+			<a href="osc-mappings.html#OSCSetup">Open Sound Control Setup</a>
+		</li>
+		<li>
+			<a href="osc-mappings.html#MappingParameters">Mapping Parameters</a>
+		</li>
+		<li>
+			<a href="osc-mappings.html#OSCLearn">OSC Learn</a>
+		</li>
+		<li>
+			<a href="osc-mappings.html#MIDIOverOSC">MIDI Over OSC</a>
+		</li>
+	</ul>
+
+	<h2><a name="OSCSetup"></a>Open Sound Control Setup</h2>
+
+	<p>
+		In order to make use of the Pedalboard's OSC support, there are two
+		things to setup:
+	</p>
+
+	<h3>OSC Port</h3>
+
+	<p>
+		This is the port that the app will listen on for new OSC messages. It
+		must match the port that your OSC client is sending messages to. To
+		set the port, go to <em>Options->Misc Settings</em>:
+	</p>
+
+	<p>
+		<img src="images/OSCPort.png" alt="OSC Port setting"/>
+	</p>
+
+	<h3>The Pedalboard's IP Address</h3>
+
+	<p>
+		This is the current IP address of your computer. Your OSC client will
+		need to know this in order to send OSC messages to the Pedalboard. In
+		order to find out your current IP address, simply go to
+		<em>Help->About</em>; it is highlighted in the following screenshot:
+	</p>
+
+	<p>
+		<img src="images/AboutIPAddress.png" alt="The IP address display in the About page"/>
+	</p>
+
+	<h2><a name="MappingParameters"></a>Mapping Parameters</h2>
+
+	<p>
+		When setting up an OSC mapping, you are presented with the following
+		parameters:
+	</p>
+
+	<p>
+		<img src="images/OSCMapping.png" alt="A basic OSC mapping"/>
+	</p>
+
+	<p>
+		The combobox on the left is the OSC address which will be mapped to the
+		plugin parameter in the combobox on the right. The OSC address combobox
+		can be edited by hand, but it will also be populated by the Pedalboard's
+		OSC Learn functionality.
+	</p>
+
+	<p>
+		The parameter control is for OSC messages which contain more than one
+		value. This control simply lets you select which value you map to the
+		corresponding plugin parameter. TouchOSC, for example, sends
+		accelerometer data as a single <em>/accxyz</em> message with separate
+		values for each of the three axes; mapping the z-axis to a plugin
+		parameter would require you to select parameter 2 in this case. In
+		most cases however the parameter control can safely be left set to 0.
+	</p>
+
+	<p>
+		One thing to note is that the Pedalboard assumes any OSC input it
+		receives is in the range 0-&gt;1. Values outside that range may result in
+		plugins behaving erratically.
+	</p>
+
+	<h2><a name="OSCLearn"></a>OSC Learn</h2>
+
+	<p>
+		<img src="images/OSCLearnAddresses.png" alt="OSC Learn list of received addresses"/>
+	</p>
+
+	<p>
+		To simplify OSC mappings, the Pedalboard has a basic 'OSC Learn'
+		function, similar to the MIDI Learn function common to many hosts. Put
+		simply, any time the Pedalboard receives an OSC message, it takes a note
+		of that message's address. When setting up an OSC mapping, every address
+		the app has received to date will then be listed in the address
+		combobox, as can be seen above.
+	</p>
+
+	<p>
+		Note that the OSC address combobox is not updated in realtime, meaning
+		the mappings window must be closed while new OSC messages are sent to
+		the app.
+	</p>
+
+	<p>
+		A quick run-through of the steps required to make use of the
+		Pedalboard's OSC Learn functionality:
+	</p>
+
+	<ol>
+		<li>
+			Ensure the app is listening on the desired port, and that your
+			OSC client is sending messages to the correct IP address (see
+			<a href="osc-mappings.html#OSCSetup">above</a>).
+		</li>
+		<li>
+			In your OSC client, trigger all the OSC messages you might want to
+			map to plugin parameters (e.g. in TouchOSC, toggle all the buttons,
+			move all the sliders, etc.).
+		</li>
+		<li>
+			Open the desired plugin's mapping window, and click <em>add
+			OSC</em>. You should see all the available OSC addresses in the OSC
+			address combobox's drop-down list.
+		</li>
+	</ol>
+
+	<h2><a name="MIDIOverOSC"></a>MIDI Over OSC</h2>
+
+	<p>
+		By default, the app's implementation of OSC is focused on manipulating
+		plugin parameters. It is also possible, however, to trigger instrument
+		plugins by sending MIDI messages via the OSC protocol, bypassing the
+		need to have MIDI hardware connected to the machine the pedalboard is
+		running on. 
+	</p>
+
+	<p>
+		<img src="images/OSCMIDIAddress.png" alt="OSC MIDI Address text editor"/>
+	</p>
+
+	<p>
+		To have an instrument plugin respond to MIDI over OSC messages, simply
+		open its mappings window and enter an OSC address for it, as shown
+		above. Now whenever the app receives an OSC message destined for that
+		address, it will treat it as a MIDI message and pass it on to the plugin
+		as such.
+	</p>
+
+	<p>
+		As far as I could tell when implementing this feature, there isn't one
+		agreed-upon standard for sending MIDI messages over OSC, so the
+		Pedalboard accepts two different MIDI/OSC message formats:
+	</p>
+
+	<ul>
+		<li>
+			OSC messages using the <em>'m'</em> typetag. These messages consist
+			of three bytes, identical to a
+			<a href="http://www.blitter.com/~russtopia/MIDI/~jglatt/tech/midispec.htm">standard
+			MIDI message</a>.
+		</li>
+		<li>
+			OSC messages with three distinct int or float values, corresponding
+			to the values of the three bytes in a standard MIDI message. This is
+			probably the most compatible format. To trigger a Note On event for
+			example, you would send the OSC message: <em>/synth1 144 60 127</em>
+			where the three numbers mean <em>&lt;This is a Note On event&gt;
+			&lt;referring to middle-C&gt; &lt;with a velocity of 127&gt;</em>.
+		</li>
+	</ul>
+</div>
+
+</div>
+
+</body>
